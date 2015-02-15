@@ -1,0 +1,37 @@
+@import 'bourbon';
+@import "base/grid-settings";
+@import 'neat';
+@import 'base/base';
+
+$edgecase-primary: rgba(105, 107, 108, 1.0);
+$edgecase-secondary: rgba(237, 119, 4, 1.0);
+$edgecase-background-dark: rgba(75, 78, 79, 1.0);
+
+@import 'welcome';
+
+.outer-container {
+  @include outer-container;
+  .wrapper {
+    @include row(table);
+    @include fill-parent();
+    height: 400px;
+    .content {
+      @include span-columns(4);
+      @include pad();
+      vertical-align: top;
+      background-color: $edgecase-secondary;
+      color: white;
+      h1,h2,h3 {
+        font-weight: 100;
+        font-size: 200%;
+
+      }
+    }
+    .imagearea {
+      @include span-columns(8);
+      @include pad();
+      @include background-image(asset-url('adam-build.jpg'));
+    }
+  }
+}
+
